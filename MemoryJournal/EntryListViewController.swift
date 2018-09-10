@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  EntryListViewController.swift
 //  MemoryJournal
 //
 //  Created by DetroitLabs on 9/10/18.
@@ -18,9 +18,12 @@
 import UIKit
 
 class EntryListViewController: UITableViewController {
+    
+    var journalEntriesToShow = JournalEntryList().journalEntriesToShow
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(journalEntriesToShow)
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -28,7 +31,16 @@ class EntryListViewController: UITableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return journalEntriesToShow.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "JournalEntryOverview", for: indexPath)
+        cell.textLabel?.text = journalEntriesToShow[indexPath.row].entryTitle
+        return cell
+    }
 
 }
 

@@ -13,6 +13,7 @@
 		43788E082146FDC10023FC55 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43788E072146FDC10023FC55 /* Assets.xcassets */; };
 		43788E0B2146FDC10023FC55 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43788E092146FDC10023FC55 /* LaunchScreen.storyboard */; };
 		43788E132146FEDB0023FC55 /* JournalEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43788E122146FEDB0023FC55 /* JournalEntry.swift */; };
+		43788E15214700020023FC55 /* JournalEntryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43788E14214700020023FC55 /* JournalEntryList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		43788E0A2146FDC10023FC55 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		43788E0C2146FDC10023FC55 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		43788E122146FEDB0023FC55 /* JournalEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalEntry.swift; sourceTree = "<group>"; };
+		43788E14214700020023FC55 /* JournalEntryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalEntryList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				43788E002146FDC10023FC55 /* AppDelegate.swift */,
 				43788E022146FDC10023FC55 /* EntryListViewController.swift */,
 				43788E122146FEDB0023FC55 /* JournalEntry.swift */,
+				43788E14214700020023FC55 /* JournalEntryList.swift */,
 				43788E042146FDC10023FC55 /* Main.storyboard */,
 				43788E072146FDC10023FC55 /* Assets.xcassets */,
 				43788E092146FDC10023FC55 /* LaunchScreen.storyboard */,
@@ -140,6 +143,7 @@
 			files = (
 				43788E132146FEDB0023FC55 /* JournalEntry.swift in Sources */,
 				43788E032146FDC10023FC55 /* EntryListViewController.swift in Sources */,
+				43788E15214700020023FC55 /* JournalEntryList.swift in Sources */,
 				43788E012146FDC10023FC55 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
