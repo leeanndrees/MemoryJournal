@@ -8,7 +8,14 @@
 
 import UIKit
 
+protocol AddEntryViewControllerDelegate: class {
+    func addEntryViewControllerDidCancel(_ controller: AddEntryViewController)
+    func addEntryViewController(_ controller: AddEntryViewController, didFinishAdding item: JournalEntry)
+}
+
 class AddEntryViewController: UITableViewController {
+    
+    weak var delegate: AddEntryViewControllerDelegate?
     
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var dateTextField: UITextField!
@@ -20,6 +27,19 @@ class AddEntryViewController: UITableViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        return nil
+    }
+    
+    @IBAction func save() {
+        let entry = JournalEntry(entryTitle: titleTextField.text!, entryContent: contentTextField.text!, entryDate: dateTextField.text!)
+        delegate?.addEntryViewController(self, didFinishAdding: entry)
+    }
+    
+    @IBAction func cancel() {
+        delegate?.addEntryViewControllerDidCancel(self)
     }
 
 }

@@ -17,8 +17,8 @@
 
 import UIKit
 
-class EntryListViewController: UITableViewController {
-    
+class EntryListViewController: UITableViewController, AddEntryViewControllerDelegate {
+
     // MARK: Outlets
     
     // MARK: Properties
@@ -68,6 +68,20 @@ class EntryListViewController: UITableViewController {
         }
     }
     
+    func addEntryViewControllerDidCancel(_ controller: AddEntryViewController) {
+        navigationController?.popViewController(animated: true)
+    }
+    
+    func addEntryViewController(_ controller: AddEntryViewController, didFinishAdding item: JournalEntry) {
+        let newRowIndex = journalEntriesToShow.count
+        journalEntriesToShow.append(item)
+        
+        let indexPath = IndexPath(row: newRowIndex, section: 0)
+        tableView.insertRows(at: [indexPath], with: .automatic)
+        
+        navigationController?.popViewController(animated: true)
+    }
+    
     func useLargeTitles() {
         navigationController?.navigationBar.prefersLargeTitles = true
     }
@@ -78,4 +92,3 @@ class EntryListViewController: UITableViewController {
     }
 
 }
-

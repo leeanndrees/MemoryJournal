@@ -133,8 +133,16 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Add Entry" id="aWG-mc-dMq">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="oSx-cR-2Ki"/>
-                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="save" id="bcQ-jX-sj5"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="oSx-cR-2Ki">
+                            <connections>
+                                <action selector="cancel" destination="CzQ-at-r3u" id="t9k-U5-8YJ"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="save" id="bcQ-jX-sj5">
+                            <connections>
+                                <action selector="save" destination="CzQ-at-r3u" id="WlN-x0-Ahp"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="contentTextField" destination="nX6-FQ-YIl" id="pCD-af-uKf"/>
