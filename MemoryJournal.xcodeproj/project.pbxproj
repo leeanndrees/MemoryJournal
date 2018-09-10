@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4377545A21470E6B00A2E777 /* EntryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4377545921470E6B00A2E777 /* EntryDetailViewController.swift */; };
+		4377545C21470FDC00A2E777 /* SegueIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4377545B21470FDC00A2E777 /* SegueIdentifier.swift */; };
 		43788E012146FDC10023FC55 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43788E002146FDC10023FC55 /* AppDelegate.swift */; };
 		43788E032146FDC10023FC55 /* EntryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43788E022146FDC10023FC55 /* EntryListViewController.swift */; };
 		43788E062146FDC10023FC55 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43788E042146FDC10023FC55 /* Main.storyboard */; };
@@ -19,6 +20,7 @@
 
 /* Begin PBXFileReference section */
 		4377545921470E6B00A2E777 /* EntryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryDetailViewController.swift; sourceTree = "<group>"; };
+		4377545B21470FDC00A2E777 /* SegueIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegueIdentifier.swift; sourceTree = "<group>"; };
 		43788DFD2146FDC10023FC55 /* MemoryJournal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemoryJournal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		43788E002146FDC10023FC55 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		43788E022146FDC10023FC55 /* EntryListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryListViewController.swift; sourceTree = "<group>"; };
@@ -65,6 +67,7 @@
 				4377545921470E6B00A2E777 /* EntryDetailViewController.swift */,
 				43788E122146FEDB0023FC55 /* JournalEntry.swift */,
 				43788E14214700020023FC55 /* JournalEntryList.swift */,
+				4377545B21470FDC00A2E777 /* SegueIdentifier.swift */,
 				43788E042146FDC10023FC55 /* Main.storyboard */,
 				43788E072146FDC10023FC55 /* Assets.xcassets */,
 				43788E092146FDC10023FC55 /* LaunchScreen.storyboard */,
@@ -148,6 +151,7 @@
 				43788E032146FDC10023FC55 /* EntryListViewController.swift in Sources */,
 				43788E15214700020023FC55 /* JournalEntryList.swift in Sources */,
 				4377545A21470E6B00A2E777 /* EntryDetailViewController.swift in Sources */,
+				4377545C21470FDC00A2E777 /* SegueIdentifier.swift in Sources */,
 				43788E012146FDC10023FC55 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
