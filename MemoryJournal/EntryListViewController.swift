@@ -19,6 +19,8 @@ import UIKit
 
 class EntryListViewController: UITableViewController {
     
+    // MARK: Outlets
+    
     // MARK: Properties
     
     var journalEntriesToShow = JournalEntryList().journalEntriesToShow
@@ -45,6 +47,19 @@ class EntryListViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "JournalEntryOverview", for: indexPath)
         cell.textLabel?.text = journalEntriesToShow[indexPath.row].entryTitle
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        selectedEntryIndex = indexPath.row
+        return indexPath
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == SegueIdentifier.showDetail.rawValue {
+            guard let entryDetailViewController = segue.destination as? EntryDetailViewController else { return }
+            entryDetailViewController.entry = journalEntriesToShow[selectedEntryIndex]
+            //entryDetailViewController.delegate = self
+        }
     }
     
     func useLargeTitles() {

@@ -9,13 +9,27 @@
 import UIKit
 
 class EntryDetailViewController: UIViewController {
-
+    @IBOutlet weak var entryTitle: UILabel!
+    @IBOutlet weak var entryDate: UILabel!
+    @IBOutlet weak var entryContent: UILabel!
+    
+    var entry: JournalEntry?
+    //weak var delegate: EntryDetailViewControllerDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        showEntryData()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    func showEntryData() {
+        guard let entryToShow = entry else { return }
+        entryTitle.text = entryToShow.entryTitle
+        entryDate.text = entryToShow.entryDate
+        entryContent.text = entryToShow.entryContent
     }
 
     
