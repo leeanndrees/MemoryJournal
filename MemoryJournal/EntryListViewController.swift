@@ -23,7 +23,6 @@ class EntryListViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(journalEntriesToShow)
         // Do any additional setup after loading the view, typically from a nib.
     }
 
