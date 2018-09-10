@@ -19,10 +19,16 @@ import UIKit
 
 class EntryListViewController: UITableViewController {
     
+    // MARK: Properties
+    
     var journalEntriesToShow = JournalEntryList().journalEntriesToShow
+    var selectedEntryIndex = 0
+    
+    // MARK: Methods
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        useLargeTitles()
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -39,6 +45,10 @@ class EntryListViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "JournalEntryOverview", for: indexPath)
         cell.textLabel?.text = journalEntriesToShow[indexPath.row].entryTitle
         return cell
+    }
+    
+    func useLargeTitles() {
+        navigationController?.navigationBar.prefersLargeTitles = true
     }
 
 }
