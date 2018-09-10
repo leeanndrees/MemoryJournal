@@ -9,7 +9,11 @@
 import UIKit
 
 class AddEntryViewController: UITableViewController {
-
+    
+    @IBOutlet weak var titleTextField: UITextField!
+    @IBOutlet weak var dateTextField: UITextField!
+    @IBOutlet weak var contentTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
