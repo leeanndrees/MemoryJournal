@@ -21,7 +21,8 @@ class AddEntryViewController: UITableViewController {
     // MARK: Outlets
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var dateTextField: UITextField!
-    @IBOutlet weak var contentTextField: UITextField!
+    @IBOutlet weak var contentTextArea: UITextView!
+    
     
     // MARK: Methods
     override func viewDidLoad() {
@@ -39,7 +40,7 @@ class AddEntryViewController: UITableViewController {
     
     // MARK: @IBActions
     @IBAction func save() {
-        let entry = JournalEntry(entryTitle: titleTextField.text!, entryContent: contentTextField.text!, entryDate: dateTextField.text!)
+        let entry = JournalEntry(entryTitle: titleTextField.text!, entryContent: contentTextArea.text!, entryDate: dateTextField.text!)
         delegate?.addEntryViewController(self, didFinishAdding: entry)
     }
     

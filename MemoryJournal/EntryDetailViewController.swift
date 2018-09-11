@@ -18,10 +18,9 @@ class EntryDetailViewController: UIViewController {
     @IBOutlet weak var entryTitle: UILabel!
     @IBOutlet weak var entryDate: UILabel!
     @IBOutlet weak var entryContent: UILabel!
-    
     @IBOutlet weak var entryTitleField: UITextField!
     @IBOutlet weak var entryDateField: UITextField!
-    @IBOutlet weak var entryContentField: UITextField!
+    @IBOutlet weak var entryContentArea: UITextView!
     
     // MARK: Properties
     var entry: JournalEntry?
@@ -54,12 +53,12 @@ class EntryDetailViewController: UIViewController {
     func toggleFieldVisibility() {
         entryTitleField.isHidden = !entryTitleField.isHidden
         entryDateField.isHidden = !entryDateField.isHidden
-        entryContentField.isHidden = !entryContentField.isHidden
+        entryContentArea.isHidden = !entryContentArea.isHidden
     }
     
     func showExistingTextInFields() {
         guard let entryToShow = entry else { return }
-        entryContentField.text = entryToShow.entryContent
+        entryContentArea.text = entryToShow.entryContent
         entryTitleField.text = entryToShow.entryTitle
         entryDateField.text = entryToShow.entryDate
     }
@@ -81,7 +80,7 @@ class EntryDetailViewController: UIViewController {
         guard let updatedDate = entryDateField.text else { return }
         entryToUpdate.entryDate = updatedDate
         
-        guard let updatedContent = entryContentField.text else { return }
+        guard let updatedContent = entryContentArea.text else { return }
         entryToUpdate.entryContent = updatedContent
         
         delegate?.entryDetailViewController(self, didFinishEditing: entryToUpdate)
