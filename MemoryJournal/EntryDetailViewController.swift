@@ -65,6 +65,7 @@ class EntryDetailViewController: UIViewController {
         toggleFieldVisibility()
         toggleLabelVisibility()
         showExistingTextInFields()
+        self.navigationItem.title = "Edit Entry"
     }
     
     @IBAction func save(_ sender: UIBarButtonItem) {
