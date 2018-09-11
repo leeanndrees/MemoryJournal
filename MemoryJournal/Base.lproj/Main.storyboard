@@ -287,6 +287,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="editButton" destination="h1C-vO-KO2" id="s5a-Nu-f93"/>
                         <outlet property="entryContent" destination="2tM-Kk-1MB" id="WFC-Nv-147"/>
                         <outlet property="entryContentArea" destination="Eyq-5e-74c" id="DJg-hF-pLU"/>
                         <outlet property="entryDate" destination="T6Y-ev-L3B" id="hwE-vs-13s"/>

@@ -21,6 +21,7 @@ class EntryDetailViewController: UIViewController {
     @IBOutlet weak var entryTitleField: UITextField!
     @IBOutlet weak var entryDateField: UITextField!
     @IBOutlet weak var entryContentArea: UITextView!
+    @IBOutlet weak var editButton: UIButton!
     
     // MARK: Properties
     var entry: JournalEntry?
@@ -56,6 +57,15 @@ class EntryDetailViewController: UIViewController {
         entryContentArea.isHidden = !entryContentArea.isHidden
     }
     
+    func toggleButtonText() {
+        if editButton.titleLabel?.text == ButtonTitle.edit.rawValue {
+            editButton.setTitle(ButtonTitle.cancel.rawValue, for: .normal)
+        }
+        else if editButton.titleLabel?.text == ButtonTitle.cancel.rawValue {
+            editButton.setTitle(ButtonTitle.edit.rawValue, for: .normal)
+        }
+    }
+    
     func showExistingTextInFields() {
         guard let entryToShow = entry else { return }
         entryContentArea.text = entryToShow.entryContent
@@ -68,7 +78,7 @@ class EntryDetailViewController: UIViewController {
         toggleFieldVisibility()
         toggleLabelVisibility()
         showExistingTextInFields()
-        self.navigationItem.title = "Edit Entry"
+        toggleButtonText()
     }
     
     @IBAction func save(_ sender: UIBarButtonItem) {

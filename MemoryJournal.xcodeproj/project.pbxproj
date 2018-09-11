@@ -17,6 +17,7 @@
 		43788E0B2146FDC10023FC55 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43788E092146FDC10023FC55 /* LaunchScreen.storyboard */; };
 		43788E132146FEDB0023FC55 /* JournalEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43788E122146FEDB0023FC55 /* JournalEntry.swift */; };
 		43788E15214700020023FC55 /* JournalEntryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43788E14214700020023FC55 /* JournalEntryList.swift */; };
+		43C3394A214845000086CD66 /* ButtonTitles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C33949214845000086CD66 /* ButtonTitles.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		43788E0C2146FDC10023FC55 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		43788E122146FEDB0023FC55 /* JournalEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalEntry.swift; sourceTree = "<group>"; };
 		43788E14214700020023FC55 /* JournalEntryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalEntryList.swift; sourceTree = "<group>"; };
+		43C33949214845000086CD66 /* ButtonTitles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonTitles.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 				43788E002146FDC10023FC55 /* AppDelegate.swift */,
 				43788E022146FDC10023FC55 /* EntryListViewController.swift */,
 				4377545921470E6B00A2E777 /* EntryDetailViewController.swift */,
+				43C33949214845000086CD66 /* ButtonTitles.swift */,
 				4377545D2147184800A2E777 /* AddEntryViewController.swift */,
 				43788E122146FEDB0023FC55 /* JournalEntry.swift */,
 				43788E14214700020023FC55 /* JournalEntryList.swift */,
@@ -156,6 +159,7 @@
 				4377545E2147184800A2E777 /* AddEntryViewController.swift in Sources */,
 				4377545A21470E6B00A2E777 /* EntryDetailViewController.swift in Sources */,
 				4377545C21470FDC00A2E777 /* SegueIdentifier.swift in Sources */,
+				43C3394A214845000086CD66 /* ButtonTitles.swift in Sources */,
 				43788E012146FDC10023FC55 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
