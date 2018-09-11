@@ -13,6 +13,8 @@ protocol EntryDetailViewControllerDelegate: class {
 }
 
 class EntryDetailViewController: UIViewController {
+    
+    // MARK: Outlets
     @IBOutlet weak var entryTitle: UILabel!
     @IBOutlet weak var entryDate: UILabel!
     @IBOutlet weak var entryContent: UILabel!
@@ -21,9 +23,11 @@ class EntryDetailViewController: UIViewController {
     @IBOutlet weak var entryDateField: UITextField!
     @IBOutlet weak var entryContentField: UITextField!
     
+    // MARK: Properties
     var entry: JournalEntry?
     weak var delegate: EntryDetailViewControllerDelegate?
     
+    // MARK: Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         showEntryData()
@@ -60,7 +64,7 @@ class EntryDetailViewController: UIViewController {
         entryDateField.text = entryToShow.entryDate
     }
     
-    
+    // MARK: @IBActions
     @IBAction func editButton(_ sender: UIButton) {
         toggleFieldVisibility()
         toggleLabelVisibility()
@@ -82,14 +86,5 @@ class EntryDetailViewController: UIViewController {
         
         delegate?.entryDetailViewController(self, didFinishEditing: entryToUpdate)
     }
-    
-    
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    //override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-   // }
 
 }

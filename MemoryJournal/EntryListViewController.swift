@@ -19,9 +19,6 @@ import UIKit
 
 class EntryListViewController: UITableViewController, AddEntryViewControllerDelegate, EntryDetailViewControllerDelegate {
     
-
-    // MARK: Outlets
-    
     // MARK: Properties
     
     var journalEntriesToShow = JournalEntryList().journalEntriesToShow
@@ -40,6 +37,17 @@ class EntryListViewController: UITableViewController, AddEntryViewControllerDele
         // Dispose of any resources that can be recreated.
     }
     
+    func useLargeTitles() {
+        navigationController?.navigationBar.prefersLargeTitles = true
+    }
+    
+    func swipeToDelete(indexPath: IndexPath) {
+        journalEntriesToShow.remove(at: indexPath.row)
+        tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.fade)
+    }
+    
+    // MARK: Table View Overrides
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return journalEntriesToShow.count
     }
@@ -55,19 +63,13 @@ class EntryListViewController: UITableViewController, AddEntryViewControllerDele
         return indexPath
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == SegueIdentifier.showDetail.rawValue {
-            guard let entryDetailViewController = segue.destination as? EntryDetailViewController else { return }
-            entryDetailViewController.entry = journalEntriesToShow[selectedEntryIndex]
-            //entryDetailViewController.delegate = self
-        }
-    }
-    
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCellEditingStyle.delete {
             swipeToDelete(indexPath: indexPath)
         }
     }
+    
+    // MARK: AddEntryViewControllerDelegate Protocol
     
     func addEntryViewControllerDidCancel(_ controller: AddEntryViewController) {
         navigationController?.popViewController(animated: true)
@@ -83,6 +85,8 @@ class EntryListViewController: UITableViewController, AddEntryViewControllerDele
         navigationController?.popViewController(animated: true)
     }
     
+    // MARK: EntryDetailViewControllerDelegate Protocol
+    
     func entryDetailViewController(_ controller: EntryDetailViewController, didFinishEditing item: JournalEntry) {
         guard let index = self.journalEntriesToShow.index(of: item) else { return }
         let indexPath = IndexPath(row: index, section: 0)
@@ -91,14 +95,16 @@ class EntryListViewController: UITableViewController, AddEntryViewControllerDele
         cell.textLabel?.text = item.entryTitle
         navigationController?.popViewController(animated: true)
     }
+
     
-    func useLargeTitles() {
-        navigationController?.navigationBar.prefersLargeTitles = true
-    }
+    // MARK: Navigation
     
-    func swipeToDelete(indexPath: IndexPath) {
-        journalEntriesToShow.remove(at: indexPath.row)
-        tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.fade)
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == SegueIdentifier.showDetail.rawValue {
+            guard let entryDetailViewController = segue.destination as? EntryDetailViewController else { return }
+            entryDetailViewController.entry = journalEntriesToShow[selectedEntryIndex]
+            entryDetailViewController.delegate = self
+        }
     }
 
 }
