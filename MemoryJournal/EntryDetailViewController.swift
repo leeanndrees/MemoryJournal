@@ -18,7 +18,6 @@ class EntryDetailViewController: UIViewController {
     @IBOutlet weak var entryTitle: UILabel!
     @IBOutlet weak var entryDate: UILabel!
     @IBOutlet weak var entryContent: UILabel!
-    
     @IBOutlet weak var entryTitleField: UITextField!
     @IBOutlet weak var entryDateField: UITextField!
     @IBOutlet weak var entryContentArea: UITextView!
