@@ -183,6 +183,27 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CPg-eH-w2y">
+                                <rect key="frame" x="139" y="195" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iE6-vK-b9X">
+                                <rect key="frame" x="139" y="268" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xDy-nk-dx6">
+                                <rect key="frame" x="30" y="433" width="295" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="BAu-3e-x85"/>
@@ -190,13 +211,16 @@
                     <navigationItem key="navigationItem" id="3Wn-lt-ck0"/>
                     <connections>
                         <outlet property="entryContent" destination="2tM-Kk-1MB" id="WFC-Nv-147"/>
+                        <outlet property="entryContentField" destination="xDy-nk-dx6" id="c0Q-5l-xuP"/>
                         <outlet property="entryDate" destination="T6Y-ev-L3B" id="hwE-vs-13s"/>
+                        <outlet property="entryDateField" destination="iE6-vK-b9X" id="1O9-ia-tBs"/>
                         <outlet property="entryTitle" destination="n9m-fc-0fK" id="LRS-m8-Gmv"/>
+                        <outlet property="entryTitleField" destination="CPg-eH-w2y" id="CSR-1D-KDv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aAU-g2-44a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1052" y="902"/>
+            <point key="canvasLocation" x="1052" y="901.47783251231533"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="gAi-8i-yV6">

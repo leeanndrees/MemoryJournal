@@ -13,6 +13,10 @@ class EntryDetailViewController: UIViewController {
     @IBOutlet weak var entryDate: UILabel!
     @IBOutlet weak var entryContent: UILabel!
     
+    @IBOutlet weak var entryTitleField: UITextField!
+    @IBOutlet weak var entryDateField: UITextField!
+    @IBOutlet weak var entryContentField: UITextField!
+    
     var entry: JournalEntry?
     //weak var delegate: EntryDetailViewControllerDelegate?
     
@@ -30,6 +34,18 @@ class EntryDetailViewController: UIViewController {
         entryTitle.text = entryToShow.entryTitle
         entryDate.text = entryToShow.entryDate
         entryContent.text = entryToShow.entryContent
+    }
+    
+    func toggleLabelVisibility() {
+        entryTitle.isHidden = !entryTitle.isHidden
+        entryDate.isHidden = !entryDate.isHidden
+        entryContent.isHidden = !entryContent.isHidden
+    }
+    
+    func toggleFieldVisibility() {
+        entryTitleField.isHidden = !entryTitleField.isHidden
+        entryDateField.isHidden = !entryDateField.isHidden
+        entryContentField.isHidden = !entryContentField.isHidden
     }
 
     
