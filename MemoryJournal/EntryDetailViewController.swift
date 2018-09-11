@@ -44,6 +44,7 @@ class EntryDetailViewController: UIViewController {
         toggleLabelVisibility()
         showExistingTextInFields()
         toggleButtonText()
+        entryTitleField.becomeFirstResponder()
     }
     
     @IBAction func save(_ sender: UIBarButtonItem) {

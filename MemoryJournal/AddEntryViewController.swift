@@ -27,6 +27,7 @@ class AddEntryViewController: UITableViewController {
     // MARK: Methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        titleTextField.becomeFirstResponder()
     }
 
     override func didReceiveMemoryWarning() {
