@@ -38,41 +38,6 @@ class EntryDetailViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
-    func showEntryData() {
-        guard let entryToShow = entry else { return }
-        entryTitle.text = entryToShow.entryTitle
-        entryDate.text = entryToShow.entryDate
-        entryContent.text = entryToShow.entryContent
-    }
-    
-    func toggleLabelVisibility() {
-        entryTitle.isHidden = !entryTitle.isHidden
-        entryDate.isHidden = !entryDate.isHidden
-        entryContent.isHidden = !entryContent.isHidden
-    }
-    
-    func toggleFieldVisibility() {
-        entryTitleField.isHidden = !entryTitleField.isHidden
-        entryDateField.isHidden = !entryDateField.isHidden
-        entryContentArea.isHidden = !entryContentArea.isHidden
-    }
-    
-    func toggleButtonText() {
-        if editButton.titleLabel?.text == ButtonTitle.edit.rawValue {
-            editButton.setTitle(ButtonTitle.cancel.rawValue, for: .normal)
-        }
-        else if editButton.titleLabel?.text == ButtonTitle.cancel.rawValue {
-            editButton.setTitle(ButtonTitle.edit.rawValue, for: .normal)
-        }
-    }
-    
-    func showExistingTextInFields() {
-        guard let entryToShow = entry else { return }
-        entryContentArea.text = entryToShow.entryContent
-        entryTitleField.text = entryToShow.entryTitle
-        entryDateField.text = entryToShow.entryDate
-    }
-    
     // MARK: @IBActions
     @IBAction func editButton(_ sender: UIButton) {
         toggleFieldVisibility()
@@ -95,5 +60,43 @@ class EntryDetailViewController: UIViewController {
         
         delegate?.entryDetailViewController(self, didFinishEditing: entryToUpdate)
     }
-
 }
+
+// MARK: Private Implementation
+extension EntryDetailViewController {
+    private func showEntryData() {
+        guard let entryToShow = entry else { return }
+        entryTitle.text = entryToShow.entryTitle
+        entryDate.text = entryToShow.entryDate
+        entryContent.text = entryToShow.entryContent
+    }
+    
+    private func toggleLabelVisibility() {
+        entryTitle.isHidden = !entryTitle.isHidden
+        entryDate.isHidden = !entryDate.isHidden
+        entryContent.isHidden = !entryContent.isHidden
+    }
+    
+    private func toggleFieldVisibility() {
+        entryTitleField.isHidden = !entryTitleField.isHidden
+        entryDateField.isHidden = !entryDateField.isHidden
+        entryContentArea.isHidden = !entryContentArea.isHidden
+    }
+    
+    private func toggleButtonText() {
+        if editButton.titleLabel?.text == ButtonTitle.edit.rawValue {
+            editButton.setTitle(ButtonTitle.cancel.rawValue, for: .normal)
+        }
+        else if editButton.titleLabel?.text == ButtonTitle.cancel.rawValue {
+            editButton.setTitle(ButtonTitle.edit.rawValue, for: .normal)
+        }
+    }
+    
+    private func showExistingTextInFields() {
+        guard let entryToShow = entry else { return }
+        entryContentArea.text = entryToShow.entryContent
+        entryTitleField.text = entryToShow.entryTitle
+        entryDateField.text = entryToShow.entryDate
+    }
+}
+
