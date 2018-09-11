@@ -17,7 +17,7 @@
 
 import UIKit
 
-class EntryListViewController: UITableViewController, AddEntryViewControllerDelegate, EntryDetailViewControllerDelegate {
+class EntryListViewController: UITableViewController {
     
     // MARK: Properties
     
@@ -36,10 +36,11 @@ class EntryListViewController: UITableViewController, AddEntryViewControllerDele
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    
-    // MARK: Private Implementation
-    
+}
+
+
+// MARK: Private Implementation
+extension EntryListViewController {
     private func useLargeTitles() {
         navigationController?.navigationBar.prefersLargeTitles = true
     }
@@ -48,9 +49,10 @@ class EntryListViewController: UITableViewController, AddEntryViewControllerDele
         journalEntriesToShow.remove(at: indexPath.row)
         tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.fade)
     }
-    
-    // MARK: Table View Overrides
-    
+}
+
+// MARK: Table View Overrides
+extension EntryListViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return journalEntriesToShow.count
     }
@@ -71,9 +73,11 @@ class EntryListViewController: UITableViewController, AddEntryViewControllerDele
             swipeToDelete(indexPath: indexPath)
         }
     }
-    
-    // MARK: AddEntryViewControllerDelegate Protocol
-    
+}
+
+
+// MARK: AddEntryViewControllerDelegate Protocol
+extension EntryListViewController: AddEntryViewControllerDelegate {
     func addEntryViewControllerDidCancel(_ controller: AddEntryViewController) {
         navigationController?.popViewController(animated: true)
     }
@@ -87,9 +91,10 @@ class EntryListViewController: UITableViewController, AddEntryViewControllerDele
         
         navigationController?.popViewController(animated: true)
     }
-    
-    // MARK: EntryDetailViewControllerDelegate Protocol
-    
+}
+
+// MARK: EntryDetailViewControllerDelegate Protocol
+extension EntryListViewController: EntryDetailViewControllerDelegate {
     func entryDetailViewController(_ controller: EntryDetailViewController, didFinishEditing item: JournalEntry) {
         guard let index = self.journalEntriesToShow.index(of: item) else { return }
         let indexPath = IndexPath(row: index, section: 0)
@@ -98,20 +103,20 @@ class EntryListViewController: UITableViewController, AddEntryViewControllerDele
         cell.textLabel?.text = item.entryTitle
         navigationController?.popViewController(animated: true)
     }
+}
 
-    
-    // MARK: Navigation
-    
+// MARK: Navigation
+
+extension EntryListViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == SegueIdentifier.showDetail.rawValue {
-            guard let entryDetailViewController = segue.destination as? EntryDetailViewController else { return }
-            entryDetailViewController.entry = journalEntriesToShow[selectedEntryIndex]
-            entryDetailViewController.delegate = self
-        }
-        else if segue.identifier == SegueIdentifier.addEntry.rawValue {
-            guard let addEntryViewController = segue.destination as? AddEntryViewController else { return }
-            addEntryViewController.delegate = self
-        }
+    if segue.identifier == SegueIdentifier.showDetail.rawValue {
+        guard let entryDetailViewController = segue.destination as? EntryDetailViewController else { return }
+        entryDetailViewController.entry = journalEntriesToShow[selectedEntryIndex]
+        entryDetailViewController.delegate = self
     }
-
+    else if segue.identifier == SegueIdentifier.addEntry.rawValue {
+        guard let addEntryViewController = segue.destination as? AddEntryViewController else { return }
+        addEntryViewController.delegate = self
+    }
+    }
 }
