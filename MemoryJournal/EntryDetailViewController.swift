@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol EntryDetailViewControllerDelegate: class {
+    func entryDetailViewController(_ controller: EntryDetailViewController, didFinishEditing item: JournalEntry)
+}
+
 class EntryDetailViewController: UIViewController {
     @IBOutlet weak var entryTitle: UILabel!
     @IBOutlet weak var entryDate: UILabel!
@@ -18,7 +22,7 @@ class EntryDetailViewController: UIViewController {
     @IBOutlet weak var entryContentField: UITextField!
     
     var entry: JournalEntry?
-    //weak var delegate: EntryDetailViewControllerDelegate?
+    weak var delegate: EntryDetailViewControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,6 +65,21 @@ class EntryDetailViewController: UIViewController {
         toggleFieldVisibility()
         toggleLabelVisibility()
         showExistingTextInFields()
+    }
+    
+    @IBAction func save(_ sender: UIBarButtonItem) {
+        guard let entryToUpdate = entry else { return }
+        
+        guard let updatedTitle = entryTitleField.text else { return }
+        entryToUpdate.entryTitle = updatedTitle
+        
+        guard let updatedDate = entryDateField.text else { return }
+        entryToUpdate.entryDate = updatedDate
+        
+        guard let updatedContent = entryContentField.text else { return }
+        entryToUpdate.entryContent = updatedContent
+        
+        delegate?.entryDetailViewController(self, didFinishEditing: entryToUpdate)
     }
     
     

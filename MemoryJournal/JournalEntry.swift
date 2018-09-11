@@ -8,7 +8,7 @@
 
 import Foundation
 
-class JournalEntry {
+class JournalEntry: NSObject {
     var entryTitle: String
     var entryContent: String
     var entryDate: String

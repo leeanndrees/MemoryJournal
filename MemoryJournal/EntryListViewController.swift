@@ -17,7 +17,8 @@
 
 import UIKit
 
-class EntryListViewController: UITableViewController, AddEntryViewControllerDelegate {
+class EntryListViewController: UITableViewController, AddEntryViewControllerDelegate, EntryDetailViewControllerDelegate {
+    
 
     // MARK: Outlets
     
@@ -79,6 +80,15 @@ class EntryListViewController: UITableViewController, AddEntryViewControllerDele
         let indexPath = IndexPath(row: newRowIndex, section: 0)
         tableView.insertRows(at: [indexPath], with: .automatic)
         
+        navigationController?.popViewController(animated: true)
+    }
+    
+    func entryDetailViewController(_ controller: EntryDetailViewController, didFinishEditing item: JournalEntry) {
+        guard let index = self.journalEntriesToShow.index(of: item) else { return }
+        let indexPath = IndexPath(row: index, section: 0)
+        
+        guard let cell = tableView.cellForRow(at: indexPath) else { return }
+        cell.textLabel?.text = item.entryTitle
         navigationController?.popViewController(animated: true)
     }
     

@@ -216,7 +216,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="BAu-3e-x85"/>
                     </view>
-                    <navigationItem key="navigationItem" id="3Wn-lt-ck0"/>
+                    <navigationItem key="navigationItem" id="3Wn-lt-ck0">
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="save" id="FiX-8J-dSx"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="entryContent" destination="2tM-Kk-1MB" id="WFC-Nv-147"/>
                         <outlet property="entryContentField" destination="xDy-nk-dx6" id="c0Q-5l-xuP"/>
