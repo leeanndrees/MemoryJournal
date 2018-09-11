@@ -105,6 +105,10 @@ class EntryListViewController: UITableViewController, AddEntryViewControllerDele
             entryDetailViewController.entry = journalEntriesToShow[selectedEntryIndex]
             entryDetailViewController.delegate = self
         }
+        else if segue.identifier == SegueIdentifier.addEntry.rawValue {
+            guard let addEntryViewController = segue.destination as? AddEntryViewController else { return }
+            addEntryViewController.delegate = self
+        }
     }
 
 }

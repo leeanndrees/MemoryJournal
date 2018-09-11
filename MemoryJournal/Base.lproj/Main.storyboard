@@ -39,7 +39,7 @@
                     <navigationItem key="navigationItem" title="Memory Journal" id="Fd9-nq-IZB">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Fv1-ev-Z7e">
                             <connections>
-                                <segue destination="CzQ-at-r3u" kind="show" id="8kv-XD-Yk9"/>
+                                <segue destination="CzQ-at-r3u" kind="show" identifier="AddEntry" id="8kv-XD-Yk9"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
