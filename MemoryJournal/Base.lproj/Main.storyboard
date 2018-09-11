@@ -130,19 +130,21 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="437.66666666666669"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="KZe-ZO-XJI">
-                                                    <rect key="frame" x="37.666666666666657" y="69" width="300" height="300"/>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KZe-ZO-XJI">
+                                                    <rect key="frame" x="24.666666666666657" y="11" width="325" height="400"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="300" id="k6q-Xn-OXN"/>
-                                                        <constraint firstAttribute="width" constant="300" id="lOe-43-Qeb"/>
+                                                        <constraint firstAttribute="height" constant="400" id="k6q-Xn-OXN"/>
+                                                        <constraint firstAttribute="width" constant="325" id="lOe-43-Qeb"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="KZe-ZO-XJI" firstAttribute="centerY" secondItem="r8s-cW-G2z" secondAttribute="centerY" id="7Fa-1p-JbP"/>
+                                                <constraint firstItem="KZe-ZO-XJI" firstAttribute="top" secondItem="r8s-cW-G2z" secondAttribute="top" constant="11" id="3M6-qe-Ilo"/>
+                                                <constraint firstAttribute="trailing" secondItem="KZe-ZO-XJI" secondAttribute="trailing" constant="25.333333333333371" id="F11-5Q-u5l"/>
+                                                <constraint firstItem="KZe-ZO-XJI" firstAttribute="leading" secondItem="r8s-cW-G2z" secondAttribute="leading" constant="24.666666666666657" id="Tfl-n8-jd1"/>
                                                 <constraint firstItem="KZe-ZO-XJI" firstAttribute="centerX" secondItem="r8s-cW-G2z" secondAttribute="centerX" id="la7-uy-PAW"/>
                                             </constraints>
                                         </tableViewCellContentView>
