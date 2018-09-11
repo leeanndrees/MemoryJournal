@@ -37,11 +37,14 @@ class EntryListViewController: UITableViewController, AddEntryViewControllerDele
         // Dispose of any resources that can be recreated.
     }
     
-    func useLargeTitles() {
+    
+    // MARK: Private Implementation
+    
+    private func useLargeTitles() {
         navigationController?.navigationBar.prefersLargeTitles = true
     }
     
-    func swipeToDelete(indexPath: IndexPath) {
+    private func swipeToDelete(indexPath: IndexPath) {
         journalEntriesToShow.remove(at: indexPath.row)
         tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.fade)
     }
