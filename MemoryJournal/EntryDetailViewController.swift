@@ -23,6 +23,7 @@ class EntryDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         showEntryData()
+        toggleFieldVisibility()
     }
 
     override func didReceiveMemoryWarning() {
@@ -47,7 +48,21 @@ class EntryDetailViewController: UIViewController {
         entryDateField.isHidden = !entryDateField.isHidden
         entryContentField.isHidden = !entryContentField.isHidden
     }
-
+    
+    func showExistingTextInFields() {
+        guard let entryToShow = entry else { return }
+        entryContentField.text = entryToShow.entryContent
+        entryTitleField.text = entryToShow.entryTitle
+        entryDateField.text = entryToShow.entryDate
+    }
+    
+    
+    @IBAction func editButton(_ sender: UIButton) {
+        toggleFieldVisibility()
+        toggleLabelVisibility()
+        showExistingTextInFields()
+    }
+    
     
     // MARK: - Navigation
 
